@@ -6,7 +6,7 @@
 #    By: vmormont <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/31 16:31:10 by vmormont          #+#    #+#              #
-#    Updated: 2019/06/04 16:36:01 by vmormont         ###   ########.fr        #
+#    Updated: 2019/10/03 00:50:39 by vmormont         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,6 @@ NAME	:= libftprintf.a
 
 SRC_DIR	:= ./src
 INC_DIR	:= ./includes
-OBJ_DIR	:= ./obj
 CC 		:= gcc
 CFLAGS 	:= -Wall -Wextra -Werror
 SRC		:= ft_printf.c \
@@ -35,24 +34,21 @@ SRC		:= ft_printf.c \
 		ft_strsub.c ft_bzero.c \
 		ft_strcat.c ft_strcpy.c ft_num_dig.c
 
-.PHONY: all clean fclean re dir
+.PHONY: all clean fclean re
 
-OBJ		:= $(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
+OBJ		:= $(SRC:.c=.o)
 
-$(OBJ_DIR)/%.o:$(SRC_DIR)/%.c
+%.o: $(SRC_DIR)/%.c
 	@$(CC) $(CFLAGS) -I $(INC_DIR) -o $@ -c $<
 
-$(NAME) : dir $(OBJ)
+$(NAME): $(OBJ)
 	@ar rc $(NAME) $(OBJ)
 	@ranlib $(NAME)
 
-all : $(NAME)
-
-dir:
-	mkdir -p $(OBJ_DIR)
+all: $(NAME)
 
 clean:
-	rm -rf $(OBJ_DIR)
+	rm -rf $(OBJ)
 
 fclean: clean
 	rm -rf $(NAME)
