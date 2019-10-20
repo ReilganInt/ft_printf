@@ -6,7 +6,7 @@
 #    By: vmormont <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/31 16:31:10 by vmormont          #+#    #+#              #
-#    Updated: 2019/10/03 00:50:39 by vmormont         ###   ########.fr        #
+#    Updated: 2019/10/20 19:30:25 by vmormont         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ SRC		:= ft_printf.c \
 		ft_pow.c ft_putchar.c ft_putnbr.c ft_strchr.c ft_strdup.c ft_strjoin.c \
 		ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strndup.c ft_strnew.c ft_strrchr.c \
 		ft_strsub.c ft_bzero.c \
-		ft_strcat.c ft_strcpy.c ft_num_dig.c
+		ft_strcat.c ft_strcpy.c ft_num_dig.c ft_strncpy.c ft_strnlen.c
 
 .PHONY: all clean fclean re
 

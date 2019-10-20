@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_buf_new.c                                       :+:      :+:    :+:   */
+/*   ft_strnlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vmormont <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/20 20:12:50 by vmormont          #+#    #+#             */
-/*   Updated: 2019/10/20 20:13:06 by vmormont         ###   ########.fr       */
+/*   Created: 2019/10/20 20:20:51 by vmormont          #+#    #+#             */
+/*   Updated: 2019/10/20 20:20:53 by vmormont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-t_buf				*ft_buf_new(t_buf *new)
+size_t		ft_strnlen(const char *string, size_t max)
 {
-	new->size = 0;
-	new->top = -1;
-	new->err = 0;
-	if (!(new->buf = ft_strnew(BUF_SIZE)))
-		return (NULL);
-	return (new);
+	size_t	len;
+
+	len = 0;
+	while (string[len] != '\0' && len < max)
+		len++;
+	return (len);
 }

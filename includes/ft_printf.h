@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vmormont <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/04 13:52:14 by vmormont          #+#    #+#             */
-/*   Updated: 2019/07/04 13:52:17 by vmormont         ###   ########.fr       */
+/*   Created: 2019/10/20 20:24:44 by vmormont          #+#    #+#             */
+/*   Updated: 2019/10/20 20:24:45 by vmormont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,5 +137,6 @@ void				ft_two_b(unsigned long long c, char *str);
 void				ft_three_b(unsigned long long c, char *str);
 void				ft_four_b(unsigned long long c, char *str);
 int					ft_num_dig(uintmax_t n, int base);
-
+size_t				ft_strnlen(const char *string, size_t max);
+char				*ft_strncpy(char *dst, const char *src, size_t len);
 #endif
